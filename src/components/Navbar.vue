@@ -1,10 +1,10 @@
 <template>
   <div id="navbar">
       <ul class="nav-list">
-          <li class="nav-item"><a class="nav-link" href="#header-row">home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills-section">skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects-section">projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact-section">contact</a></li>
+          <li class="nav-item"><a @click="activeHome" class="nav-link" v-bind:class="{ 'active-link': isHomeActive }" href="#header-row">home</a></li>
+          <li class="nav-item"><a @click="activeSkills" class="nav-link" v-bind:class="{ 'active-link': isSkillsActive }" href="#skills-section">skills</a></li>
+          <li class="nav-item"><a @click="activeProjects" class="nav-link" v-bind:class="{ 'active-link': isProjectsActive }" href="#projects-section">projects</a></li>
+          <li class="nav-item"><a @click="activeContact" class="nav-link" v-bind:class="{ 'active-link': isContactActive }" href="#contact-section">contact</a></li>
       </ul>
   </div>
 </template>
@@ -16,6 +16,40 @@ export default {
   name: 'navbar',
   components: {
       NavbarItem
+  },
+  data () {
+    return {
+      isHomeActive: false,
+      isSkillsActive: false,
+      isProjectsActive: false,
+      isContactActive: false
+    }
+  },
+  methods: {
+    activeHome: function() {
+      this.isHomeActive = true;
+      this.isSkillsActive = false;
+      this.isProjectsActive = false;
+      this.isContactActive = false;
+    },
+    activeSkills: function() {
+      this.isSkillsActive = true;
+      this.isHomeActive = false;
+      this.isProjectsActive = false;
+      this.isContactActive = false;
+    },
+    activeProjects: function() {
+      this.isProjectsActive = true;
+      this.isSkillsActive = false;
+      this.isHomeActive = false;
+      this.isContactActive = false;
+    },
+    activeContact: function() {
+      this.isContactActive = true;
+      this.isSkillsActive = false;
+      this.isProjectsActive = false;
+      this.isHomeActive = false;
+    }
   }
 }
 </script>
@@ -55,7 +89,7 @@ export default {
     /* transition: 0.1s; */
   }
 
-  .nav-link:hover {
+  .nav-link:hover, .active-link {
     color: #ff0000;
     border-bottom: 2px solid #ff0000;
   }
