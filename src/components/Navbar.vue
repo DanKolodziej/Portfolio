@@ -2,21 +2,53 @@
   <div id="navbar">
       <ul class="nav-list">
           <li class="nav-item"><a class="nav-link" href="#header-row">home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills-section">skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects-section">projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills-section">about</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects-section">experience</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact-section">contact</a></li>
       </ul>
   </div>
 </template>
 
 <script>
-import NavbarItem from './NavbarItem.vue';
+// import NavbarItem from './NavbarItem.vue';
 
 export default {
-  name: 'navbar',
-  components: {
-      NavbarItem
-  }
+    name: 'navbar',
+    components: {
+      // NavbarItem
+    },
+    data() {
+        return {
+            isHomeActive: false,
+            isSkillsActive: false,
+            isProjectsActive: false,
+            isContactActive: false,
+        }
+    },
+    methods: {
+      scrollHandle: function () {
+          // console.log('window height: ' + window.innerHeight);
+          // console.log('scroll position: ' + window.scrollY);
+          //
+          // var windowHeight = window.innerHeight;
+          // var scrollPosition = window.scrollY;
+          // switch (scrollPosition) {
+          //     case scrollPosition > windowHeight + 3 *
+          // }
+      }
+    },
+    created() {
+        window.addEventListener('scroll', this.scrollHandle);
+    },
+    destroyed() {
+        window.removeEventListener('scroll', this.scrollHandle);
+    }
+    // computed: {
+    //   isHomeActive: function () {
+    //       // console.log(window.innerHeight);
+    //       return window.innerHeight
+    //   }
+    // }
 }
 </script>
 

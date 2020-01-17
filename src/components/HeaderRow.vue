@@ -3,9 +3,14 @@
     <h1 class="header-main-text">
         Hi, I'm <span class="full-name">Daniel Kołodziej</span>. 
         <br>
-       I'm a junior Web Developer.
+       I'm a junior full-stack web developer.
     </h1>
-    <a class="view-portfolio-link" href="#skills-section"><button class="view-portfolio-btn">View my work</button></a>
+    <a class="view-portfolio-link" href="#skills-section">
+        <button class="view-portfolio-btn">
+            View more
+            <font-awesome-icon class="arrow-icon" icon="arrow-right" />
+        </button>
+    </a>
     <!-- <h1>Web Developer</h1> -->
   </div>
 </template>
@@ -13,7 +18,7 @@
 <script>
 
 export default {
-  name: 'footer-row'
+  name: 'header-row'
 }
 </script>
 
@@ -23,7 +28,8 @@ export default {
     display: flex;
     /* align-items: center; */
     justify-content: center;
-    background-color: #444;
+    /*background-color: #444;*/
+      background-color: #222222;
     width: 100%;
     /* margin: 0; */
     height: 100vh;
@@ -51,11 +57,13 @@ export default {
   .view-portfolio-link {
     align-self: center;
     order: 2;
+      margin-top: 20px;
   }
   
   .view-portfolio-btn {
     border: 2px solid #ff0000;
-    background-color: #444;
+    /*background-color: #444;*/
+      background-color: #222222;
     color: black;
     padding: 14px 28px;
     font-size: 20px;
@@ -67,12 +75,25 @@ export default {
     /* align-self: center;
     order: 2; */
     font-family: 'Raleway', sans-serif;
-    transition: 0.3s;
+    transition: 0.45s;
   }
 
   .view-portfolio-btn:hover {
     background: #ff0000;
     color: #fff;
+  }
+
+  .arrow-icon {
+      position: relative;
+      top: 2px;
+      left: 8px;
+      transition: 0.45s;
+      transform: rotate(0);
+  }
+
+  .view-portfolio-btn:hover .arrow-icon {
+        transition: 0.45s;
+        transform: rotate(90deg);
   }
 
 </style>
