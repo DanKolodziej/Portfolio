@@ -32,10 +32,10 @@ export default {
     return {
       projects: [
         { imageName: 'webpack.png', title: 'SWM',
-          description: 'This is a placeholder description', link: 'https://www.google.com/' },
+          description: 'This is a placeholder description', link: '' },
         { imageSrc: 'webpack.png', title: 'Sound Property Cash Flow Calculator',
           description: 'Calculator that calculates cash flows for real estate investors.', link: 'https://soundproperty.com.au/calculator/' },
-        { imageSrc: 'SAVE_20191126_201321.jpg', title: 'Erasmus Enrollment Web App for Foreign Students',
+        { imageSrc: 'webpack.jpg', title: 'Erasmus Enrollment Web App for Foreign Students',
           description: 'This is a placeholder description', link: '' },
       ]
     }
@@ -72,6 +72,7 @@ export default {
     max-width: 768px;
     margin: 0 auto;
     display: flex;
+    justify-content: space-between;
   }
 
   .projects-icon-link {
@@ -88,6 +89,12 @@ export default {
 
   .projects-link:hover {
     border-bottom: 1px solid;
+  }
+
+  @media (max-width: 550px) {
+    .projects-grid {
+      flex-direction: column;
+    }
   }
 
 </style>

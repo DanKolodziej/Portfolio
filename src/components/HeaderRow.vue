@@ -64,7 +64,6 @@ export default {
     border: 2px solid #ff0000;
     /*background-color: #444;*/
       background-color: #222222;
-    color: black;
     padding: 14px 28px;
     font-size: 20px;
     cursor: pointer;

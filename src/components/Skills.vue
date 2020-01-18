@@ -128,6 +128,7 @@ export default {
       padding: 1% 0;
       margin: 1%;
       font-weight: bold;
+      border: 2px solid #ff0000;
   }
 
   .technology-grid {
@@ -176,6 +177,26 @@ export default {
       font-weight: bold;
       text-align: center;
       display: block;
+  }
+
+    @media (max-width: 768px) {
+        .skills-row {
+            flex-direction: column;
+        }
+
+        .technology-grid {
+            max-width: none;
+        }
+
+        .technology {
+            width: 16%;
+        }
+    }
+
+  @media (max-width: 550px) {
+      .technology {
+          width: 25%;
+      }
   }
 
 </style>

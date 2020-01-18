@@ -48,6 +48,10 @@ export default {
       border-bottom: 2px solid #ff0000;
   }
 
+  .section-title+p {
+    margin-top: 0;
+  }
+
   .contact-options {
     width: 100%;
     max-width: 256px;
