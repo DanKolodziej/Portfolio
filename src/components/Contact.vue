@@ -24,7 +24,31 @@
 <script>
 
 export default {
-  name: 'contact'
+  name: 'contact',
+  methods: {
+    scrollHandle: function () {
+      var scrollPosition = window.scrollY;
+      var paragraphs = document.querySelectorAll('#contact p');
+      var paragraphsPosition = paragraphs[0].offsetTop;
+      if (scrollPosition > paragraphsPosition - 500) {
+        paragraphs[0].style.visibility = 'visible';
+        paragraphs[0].style.opacity = '1';
+        paragraphs[0].style.transform = 'translateY(0)';
+        paragraphs[1].style.visibility = 'visible';
+        paragraphs[1].style.opacity = '1';
+        paragraphs[1].style.transform = 'translateY(0)';
+        paragraphs[2].style.visibility = 'visible';
+        paragraphs[2].style.opacity = '1';
+        paragraphs[2].style.transform = 'translateY(0)';
+      }
+    }
+  },
+  created() {
+    window.addEventListener('scroll', this.scrollHandle);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.scrollHandle);
+  }
 }
 </script>
 
@@ -57,6 +81,18 @@ export default {
     max-width: 256px;
     margin: 0 auto;
     text-align: left;
+  }
+
+  #contact p {
+    transition: 350ms ease;
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  #contact .contact-options p {
+    transition: 350ms ease;
+    transform: translateY(50px);
+    opacity: 0;
   }
 
   .contact-icon-link {

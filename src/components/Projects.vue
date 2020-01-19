@@ -1,8 +1,8 @@
 <template>
   <div id="projects">
     <h1 class="section-title">EXPERIENCE</h1>
-    <p>My experience involves</p>
-    <p>Recently finished project: this portfolio :)</p>
+    <p class="experience-paragraph">My experience involves</p>
+    <p class="experience-paragraph">Recently finished project: this portfolio :)</p>
     <div class="projects-grid">
       <project-panel v-for="project in projects"
                      :image-src="project.imageName"
@@ -39,6 +39,37 @@ export default {
           description: 'This is a placeholder description', link: '' },
       ]
     }
+  },
+  methods: {
+    scrollHandle: function () {
+      var scrollPosition = window.scrollY;
+      var paragraphs = document.querySelectorAll('#projects p');
+      var paragraphsPosition = paragraphs[0].offsetTop;
+      var projectsGrid = document.querySelector('#projects .projects-grid');
+      var projectsGridPosition = projectsGrid.offsetTop;
+      if (scrollPosition > paragraphsPosition - 400) {
+        paragraphs[0].style.visibility = 'visible';
+        paragraphs[0].style.opacity = '1';
+        paragraphs[0].style.transform = 'scale(1)';
+        paragraphs[1].style.visibility = 'visible';
+        paragraphs[1].style.opacity = '1';
+        paragraphs[1].style.transform = 'scale(1)';
+      }
+      if (scrollPosition > projectsGridPosition - 400) {
+        projectsGrid.style.visibility = 'visible';
+        projectsGrid.style.opacity = '1';
+        projectsGrid.style.transform = 'none';
+        paragraphs[2].style.visibility = 'visible';
+        paragraphs[2].style.opacity = '1';
+        paragraphs[2].style.transform = 'scale(1)';
+      }
+    }
+  },
+  created() {
+    window.addEventListener('scroll', this.scrollHandle);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.scrollHandle);
   }
 }
 </script>
@@ -73,6 +104,15 @@ export default {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    transition: 350ms ease;
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  .projects-grid p {
+    transition: 350ms ease;
+    transform: scale(0.5);
+    opacity: 0;
   }
 
   .projects-icon-link {

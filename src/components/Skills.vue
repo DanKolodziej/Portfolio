@@ -74,7 +74,32 @@
 <script>
 
 export default {
-  name: 'skills'
+  name: 'skills',
+    methods: {
+        scrollHandle: function () {
+            var scrollPosition = window.scrollY;
+            var aboutCol = document.querySelector('#skills .about-me-col');
+            var aboutPosition = aboutCol.offsetTop;
+            var technologyCol = document.querySelector('#skills .technology-col');
+            var technologyPosition = technologyCol.offsetTop;
+            if (scrollPosition > aboutPosition - 400) {
+                aboutCol.style.visibility = 'visible';
+                aboutCol.style.opacity = '1';
+                aboutCol.style.transform = 'translateX(0)';
+            }
+            if (scrollPosition > technologyPosition - 400) {
+                technologyCol.style.visibility = 'visible';
+                technologyCol.style.opacity = '1';
+                technologyCol.style.transform = 'translateX(0)';
+            }
+        }
+    },
+    created() {
+        window.addEventListener('scroll', this.scrollHandle);
+    },
+    destroyed() {
+        window.removeEventListener('scroll', this.scrollHandle);
+    }
 }
 </script>
 
@@ -102,12 +127,17 @@ export default {
       display: flex;
       max-width: 768px;
       margin: 0 auto;
+      overflow: hidden;
   }
 
   .about-me-col {
       flex: 48%;
       padding: 0 1% 1% 1%;
       margin: 1%;
+      /*visibility: hidden;*/
+      transition: 350ms ease;
+      transform: translateX(-100px);
+      opacity: 0;
   }
 
   .name {
@@ -129,6 +159,10 @@ export default {
       margin: 1%;
       font-weight: bold;
       border: 2px solid #ff0000;
+      /*visibility: hidden;*/
+      transition: 350ms ease;
+      transform: translateX(100px);
+      opacity: 0;
   }
 
   .technology-grid {

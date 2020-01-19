@@ -12,7 +12,8 @@
     "@fortawesome/free-brands-svg-icons": "^5.12.0",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "@fortawesome/vue-fontawesome": "^0.1.9",
-    "vue": "^2.5.22",
+    "vue": "^2.6.11",
+    "vue-loader": "^15.8.3",
     "vue-router": "^3.1.5"
   },
   "devDependencies": {
@@ -22,7 +23,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
     "root": true,

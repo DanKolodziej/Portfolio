@@ -1,17 +1,17 @@
 <template>
   <div id="app">
-<!--    <header-row></header-row>-->
-    <router-view></router-view>
+    <header-row></header-row>
+<!--    <router-view></router-view>-->
     <navbar></navbar>
-    <router-view name="a"></router-view>
-    <router-view name="b"></router-view>
-    <router-view name="c"></router-view>
-<!--    <span id="skills-section" class="section-anchor"></span>-->
-<!--    <skills></skills>-->
-<!--    <span id="projects-section" class="section-anchor"></span>-->
-<!--    <projects></projects>-->
-<!--    <span id="contact-section" class="section-anchor"></span>-->
-<!--    <contact></contact>-->
+<!--    <router-view name="about"></router-view>-->
+<!--    <router-view name="experience"></router-view>-->
+<!--    <router-view name="contact"></router-view>-->
+    <span id="skills-section" class="section-anchor"></span>
+    <skills></skills>
+    <span id="projects-section" class="section-anchor"></span>
+    <projects></projects>
+    <span id="contact-section" class="section-anchor"></span>
+    <contact></contact>
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <footer-row></footer-row>

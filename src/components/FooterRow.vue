@@ -1,5 +1,8 @@
 <template>
   <div id="footer-row">
+    <span class="scroll-up" @click="scrollUp">
+      <font-awesome-icon class="scroll-up-arrows" icon="angle-double-up" size="2x" />
+    </span>
     <p class="copy-right">
       <span class="copy-right-year">©2020</span> Daniel Kołodziej
     </p>
@@ -18,6 +21,11 @@ export default {
   name: 'footer-row',
   components: {
     
+  },
+  methods: {
+    scrollUp: function () {
+      document.querySelector('#header-row').scrollIntoView({behavior: 'smooth'});
+    }
   }
 }
 </script>
@@ -33,6 +41,45 @@ export default {
     bottom: 0;
     border-top: 2px solid #ff0000;
     /*padding: 30px 0;*/
+  }
+
+  .scroll-up {
+    background-color: #ff0000;
+    padding: 5px 10px;
+    display: block;
+    position: absolute;
+    top: -22px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20px;
+    cursor: pointer;
+  }
+
+  @-webkit-keyframes bounce {
+    0%, 50%, 100% {
+      -webkit-transform: translateY(0);
+    }
+    25% {
+      -webkit-transform: translateY(-5px);
+    }
+    75% {
+      -webkit-transform: translateY(5px);
+    }
+  }
+
+  .scroll-up:hover .scroll-up-arrows {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
   }
 
   .copy-right {

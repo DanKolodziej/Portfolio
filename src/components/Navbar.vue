@@ -1,10 +1,10 @@
 <template>
   <div id="navbar">
       <ul class="nav-list">
-          <li class="nav-item"><router-link class="nav-link" to="/">home</router-link></li>
-          <li class="nav-item"><router-link class="nav-link" to="/about">about</router-link></li>
-          <li class="nav-item"><router-link class="nav-link" to="/experience">experience</router-link></li>
-          <li class="nav-item"><router-link class="nav-link" to="/contact">contact</router-link></li>
+          <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#header-row')" :class="{active: isHomeActive}">home</a></li>
+          <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#skills-section')" :class="{active: isAboutActive}">about</a></li>
+          <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#projects-section')" :class="{active: isExperienceActive}">experience</a></li>
+          <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#contact-section')" :class="{active: isContactActive}">contact</a></li>
           <div class="hamburger-icon" @click="hamburgerMenu" :class="{change: isHamburgerMenuActive}">
               <div class="bar-one"></div>
               <div class="bar-two"></div>
@@ -12,10 +12,10 @@
           </div>
       </ul>
       <ul class="nav-list-mobile" :class="{active: isHamburgerMenuActive}">
-          <li class="nav-item"><a class="nav-link" href="#header-row">home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills-section">about</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects-section">experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact-section">contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#header-row" :class="{active: isHomeActive}">home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills-section" :class="{active: isAboutActive}">about</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects-section" :class="{active: isExperienceActive}">experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact-section" :class="{active: isContactActive}">contact</a></li>
       </ul>
   </div>
 </template>
@@ -31,8 +31,8 @@ export default {
     data() {
         return {
             isHomeActive: false,
-            isSkillsActive: false,
-            isProjectsActive: false,
+            isAboutActive: false,
+            isExperienceActive: false,
             isContactActive: false,
             isHamburgerMenuActive: false
         }
@@ -41,15 +41,33 @@ export default {
         hamburgerMenu: function () {
             this.isHamburgerMenuActive = !this.isHamburgerMenuActive;
         },
+        scroll: function (href) {
+            document.querySelector(href).scrollIntoView({behavior: 'smooth'});
+        },
       scrollHandle: function () {
-          // console.log('window height: ' + window.innerHeight);
-          // console.log('scroll position: ' + window.scrollY);
-          //
-          // var windowHeight = window.innerHeight;
-          // var scrollPosition = window.scrollY;
-          // switch (scrollPosition) {
-          //     case scrollPosition > windowHeight + 3 *
-          // }
+          var scrollPosition = window.scrollY;
+          var sections = document.querySelectorAll('.section-anchor');
+          if (scrollPosition >= sections[2].offsetTop-267) {
+              this.isHomeActive = false;
+              this.isAboutActive = false;
+              this.isExperienceActive = false;
+              this.isContactActive = true;
+          } else if (scrollPosition >= sections[1].offsetTop-60) {
+              this.isHomeActive = false;
+              this.isAboutActive = false;
+              this.isExperienceActive = true;
+              this.isContactActive = false;
+          } else if (scrollPosition >= sections[0].offsetTop-60) {
+              this.isHomeActive = false;
+              this.isAboutActive = true;
+              this.isExperienceActive = false;
+              this.isContactActive = false;
+          } else {
+              this.isHomeActive = true;
+              this.isAboutActive = false;
+              this.isExperienceActive = false;
+              this.isContactActive = false;
+          }
       }
     },
     created() {
@@ -131,10 +149,12 @@ export default {
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;
-    /* transition: 0.1s; */
+      border-bottom: 2px solid #333;
+     transition: 350ms ease;
+      cursor: pointer;
   }
 
-  .nav-link:hover {
+  .nav-link:hover, .nav-link.active {
     color: #ff0000;
     border-bottom: 2px solid #ff0000;
   }

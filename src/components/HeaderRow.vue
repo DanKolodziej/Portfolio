@@ -5,7 +5,7 @@
         <br>
        I'm a junior full-stack web developer.
     </h1>
-    <a class="view-portfolio-link" href="#skills-section">
+    <a class="view-portfolio-link" @click.prevent="scroll('#skills-section')">
         <button class="view-portfolio-btn">
             View more
             <font-awesome-icon class="arrow-icon" icon="arrow-right" />
@@ -18,7 +18,12 @@
 <script>
 
 export default {
-  name: 'header-row'
+  name: 'header-row',
+    methods: {
+        scroll: function (href) {
+            document.querySelector(href).scrollIntoView({behavior: 'smooth'});
+        }
+    }
 }
 </script>
 
