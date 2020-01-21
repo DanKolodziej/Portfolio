@@ -1,7 +1,7 @@
 <template>
     <div class="project-panel" @mouseleave="isHovered = false">
         <button class="modal-button" v-show="isHovered" @mouseenter="isButtonHovered = true" @mouseleave="isButtonHovered = false" @click="isActiveModal = true">Check</button>
-        <img class="project-thumbnail" @mouseenter="isHovered = true" src="@/assets/images/webpack.png" :class="{hover: isButtonHovered}"/>
+        <img class="project-thumbnail" @mouseenter="isHovered = true" :src="require('@/assets/images/' + imageSrc)" :class="{hover: isButtonHovered}"/>
         <div class="project-text" @mouseenter="isHovered = false">
             <h3>
                 {{ title }}
@@ -16,13 +16,17 @@
             <div class="project-modal" v-show="isActiveModal" @click="isActiveModal = false">
                 <transition name="modal-pop-up">
                     <div class="project-modal-content" v-show="isActiveModal" @click.stop>
-                        <img class="project-modal-thumbnail" src="@/assets/images/webpack.png"/>
+                        <img class="project-modal-thumbnail" :src="require('@/assets/images/' + imageSrc)"/>
                         <div class="project-modal-text">
                             <h3>
                                 {{ title }}
                             </h3>
                             <p>
                                 {{ description }}
+                            </p>
+                            <p>
+                                Technologies:<span v-for="(technology, index) in technologies"> {{ technology }}
+                                <span v-if="index != technologies.length - 1"> | </span></span>
                             </p>
                             <a v-if="link != ''" class="project-modal-link" :href="link" target="_blank">Link</a>
                             <span v-else class="project-modal-no-link">No link available</span>
@@ -55,6 +59,10 @@
             },
             description: {
                 type: String,
+                required: true
+            },
+            technologies: {
+                type: Array,
                 required: true
             },
             link: {
@@ -90,6 +98,10 @@
         height: 130px;
     }
 
+    .project-modal-text {
+        height: auto;
+    }
+
     .project-text h3, .project-text p {
         margin: 0;
         overflow: hidden;
@@ -105,15 +117,19 @@
         font-weight: bold;
         text-decoration: none;
         color: #0086da;
+        border-bottom: 1px solid #fff;
+        transition: 350ms ease;
     }
 
     .project-link:hover, .project-modal-link:hover {
-        text-decoration: underline;
+        /*text-decoration: underline;*/
+        border-bottom: 1px solid #0086da;
     }
 
     .project-no-link, .project-modal-no-link {
         font-weight: bold;
         color: #ff0000;
+        border-bottom: 1px solid #fff;
     }
 
     .project-thumbnail {
@@ -203,7 +219,8 @@
         background-color: #fff;
         border: 2px solid #ff0000;
         border-radius: 5px;
-        width: 80%;
+        width: 85%;
+        max-width: 768px;
         margin: 0 auto;
         /*transition: 250ms ease;*/
         /*transform: scale(0.8);*/
@@ -214,12 +231,12 @@
     /*}*/
 
     .project-modal-text h3, .project-modal-text p {
-        margin: 0;
+        margin: 0 0 1em;
     }
 
     .project-modal-thumbnail {
         width: 100%;
-        height: 256px;
+        /*height: 256px;*/
         border-bottom: 2px solid #ff0000;
         object-fit: cover;
     }

@@ -12,10 +12,10 @@
           </div>
       </ul>
       <ul class="nav-list-mobile" :class="{active: isHamburgerMenuActive}">
-          <li class="nav-item"><a class="nav-link" href="#header-row" :class="{active: isHomeActive}">home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills-section" :class="{active: isAboutActive}">about</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects-section" :class="{active: isExperienceActive}">experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact-section" :class="{active: isContactActive}">contact</a></li>
+          <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#header-row')" :class="{active: isHomeActive}">home</a></li>
+          <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#skills-section')" :class="{active: isAboutActive}">about</a></li>
+          <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#projects-section')" :class="{active: isExperienceActive}">experience</a></li>
+          <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#contact-section')" :class="{active: isContactActive}">contact</a></li>
       </ul>
   </div>
 </template>
@@ -43,6 +43,7 @@ export default {
         },
         scroll: function (href) {
             document.querySelector(href).scrollIntoView({behavior: 'smooth'});
+            this.isHamburgerMenuActive = false;
         },
       scrollHandle: function () {
           var scrollPosition = window.scrollY;

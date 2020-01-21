@@ -1,13 +1,14 @@
 <template>
   <div id="projects">
     <h1 class="section-title">EXPERIENCE</h1>
-    <p class="experience-paragraph">My experience involves</p>
+    <p class="experience-paragraph">My experience involves 7 months of work + my BSc Thesis project</p>
     <p class="experience-paragraph">Recently finished project: this portfolio :)</p>
     <div class="projects-grid">
       <project-panel v-for="project in projects"
                      :image-src="project.imageName"
                      :title="project.title"
                      :description="project.description"
+                     :technologies="project.technologies"
                      :link="project.link">
       </project-panel>
     </div>
@@ -31,12 +32,20 @@ export default {
   data(){
     return {
       projects: [
-        { imageName: 'webpack.png', title: 'SWM',
-          description: 'This is a placeholder description', link: '' },
-        { imageSrc: 'webpack.png', title: 'Sound Property Cash Flow Calculator',
-          description: 'Calculator that calculates cash flows for real estate investors.', link: 'https://soundproperty.com.au/calculator/' },
-        { imageSrc: 'webpack.jpg', title: 'Erasmus Enrollment Web App for Foreign Students',
-          description: 'This is a placeholder description', link: '' },
+        { imageName: 'swm_screen.png', title: 'SWM',
+          description: 'Development of a website made on wordpress,' +
+                  ' adding new interface modules for the page builder Elementor',
+          technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'SASS', 'PHP', 'Wordpress', 'MySQL', 'Webpack'],
+          link: '' },
+        { imageName: 'calculator.png', title: 'Sound Property Cash Flow Calculator',
+          description: 'Calculator that calculates cash flows for real estate investors.',
+          technologies: ['HTML', 'CSS', 'JavaScript', 'Vue.js', 'Bootstrap', 'PHP', 'Wordpress', 'MySQL', 'Webpack'],
+          link: 'https://soundproperty.com.au/calculator/' },
+        { imageName: 'erasmus.png', title: 'Erasmus Enrollment Web App for Foreign Students',
+          description: 'A web application supporting enrollment for courses' +
+                  ' for foreign students as part of the Erasmus+ exchange',
+          technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap', 'PHP', 'Symfony', 'MySQL'],
+          link: '' },
       ]
     }
   },
@@ -47,7 +56,7 @@ export default {
       var paragraphsPosition = paragraphs[0].offsetTop;
       var projectsGrid = document.querySelector('#projects .projects-grid');
       var projectsGridPosition = projectsGrid.offsetTop;
-      if (scrollPosition > paragraphsPosition - 400) {
+      if (true) {
         paragraphs[0].style.visibility = 'visible';
         paragraphs[0].style.opacity = '1';
         paragraphs[0].style.transform = 'scale(1)';
@@ -55,7 +64,7 @@ export default {
         paragraphs[1].style.opacity = '1';
         paragraphs[1].style.transform = 'scale(1)';
       }
-      if (scrollPosition > projectsGridPosition - 400) {
+      if (true) {
         projectsGrid.style.visibility = 'visible';
         projectsGrid.style.opacity = '1';
         projectsGrid.style.transform = 'none';
@@ -125,6 +134,8 @@ export default {
     text-decoration: none;
     font-weight: bold;
     margin-left: 5px;
+    border-bottom: 1px solid #222;
+    transition: 350ms ease;
   }
 
   .projects-link:hover {

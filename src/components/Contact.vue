@@ -18,6 +18,14 @@
         <a class="contact-link" href="https://www.linkedin.com/in/daniel-ko%C5%82odziej-58b2b8180/" target="_blank">Linkedin</a>
       </p>
     </div>
+    <p class="resume-paragraph">
+      You can also checkout my resume.
+    </p>
+    <p class="resume-paragraph">
+      <a class="resume-link" href="http://danielkolodziej.com/Daniel_Kołodziej_CV.pdf" target="_blank">
+        <font-awesome-icon class="pdf-icon" icon="file-pdf" size="3x" />
+      </a>
+    </p>
   </div>
 </template>
 
@@ -30,7 +38,7 @@ export default {
       var scrollPosition = window.scrollY;
       var paragraphs = document.querySelectorAll('#contact p');
       var paragraphsPosition = paragraphs[0].offsetTop;
-      if (scrollPosition > paragraphsPosition - 500) {
+      if (true) {
         paragraphs[0].style.visibility = 'visible';
         paragraphs[0].style.opacity = '1';
         paragraphs[0].style.transform = 'translateY(0)';
@@ -40,6 +48,12 @@ export default {
         paragraphs[2].style.visibility = 'visible';
         paragraphs[2].style.opacity = '1';
         paragraphs[2].style.transform = 'translateY(0)';
+        paragraphs[3].style.visibility = 'visible';
+        paragraphs[3].style.opacity = '1';
+        paragraphs[3].style.transform = 'translateY(0)';
+        paragraphs[4].style.visibility = 'visible';
+        paragraphs[4].style.opacity = '1';
+        paragraphs[4].style.transform = 'translateY(0)';
       }
     }
   },
@@ -91,7 +105,7 @@ export default {
 
   #contact .contact-options p {
     transition: 350ms ease;
-    transform: translateY(50px);
+    transform: translateY(-50px);
     opacity: 0;
   }
 
@@ -105,10 +119,31 @@ export default {
     text-decoration: none;
     font-weight: bold;
     margin-left: 5px;
+    border-bottom: 1px solid #444;
+    transition: 350ms ease;
   }
 
   .contact-link:hover {
     border-bottom: 1px solid;
+  }
+
+  .resume-link {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  #contact .resume-paragraph {
+    transition: 350ms ease;
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  .pdf-icon {
+    transition: 350ms ease;
+  }
+
+  .pdf-icon:hover {
+    color: #ff0000;
   }
 
 </style>

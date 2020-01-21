@@ -9,8 +9,7 @@
                   As a web developer I am driven by desire to create new things,
                   passion and desire to improve.
                   While working on a new project I give 100% of myself by paying attention to details.
-                  I have done work in both front-end and back-end web development.
-                  I have a total of 7 months experience working for <span class="name">DKSoft</span>.
+                  I have gained some experience working for <span class="name">DKSoft</span>.
                   I also have a bachelor of science degree in computer science.
               </p>
           </div>
@@ -82,12 +81,12 @@ export default {
             var aboutPosition = aboutCol.offsetTop;
             var technologyCol = document.querySelector('#skills .technology-col');
             var technologyPosition = technologyCol.offsetTop;
-            if (scrollPosition > aboutPosition - 400) {
+            if (true) {
                 aboutCol.style.visibility = 'visible';
                 aboutCol.style.opacity = '1';
                 aboutCol.style.transform = 'translateX(0)';
             }
-            if (scrollPosition > technologyPosition - 400) {
+            if (true) {
                 technologyCol.style.visibility = 'visible';
                 technologyCol.style.opacity = '1';
                 technologyCol.style.transform = 'translateX(0)';
