@@ -1,5 +1,5 @@
 <template>
-  <div id="skills" class="section">
+  <div id="about" class="section">
       <h1 class="section-title">ABOUT</h1>
       <div class="skills-row">
           <div class="about-me-col">
@@ -41,6 +41,10 @@
                       <span class="technology-name">Bootstrap</span>
                   </span>
                   <span class="technology">
+                      <img class="technology-icon webpack-icon" src="@/assets/images/sass.png" />
+                      <span class="technology-name">Sass</span>
+                  </span>
+                  <span class="technology">
                       <font-awesome-icon class="technology-icon" style="color: #787CB5" :icon="[ 'fab', 'php' ]" size="4x" />
                       <span class="technology-name">PHP</span>
                   </span>
@@ -57,10 +61,6 @@
                       <span class="technology-name">MySQL</span>
                   </span>
                   <span class="technology">
-                      <img class="technology-icon webpack-icon" src="@/assets/images/sass.png" />
-                      <span class="technology-name">Sass</span>
-                  </span>
-                  <span class="technology">
                       <img class="technology-icon webpack-icon" src="@/assets/images/webpack.png" />
                       <span class="technology-name">Webpack</span>
                   </span>
@@ -73,13 +73,13 @@
 <script>
 
 export default {
-  name: 'skills',
+  name: 'about',
     methods: {
         scrollHandle: function () {
             var scrollPosition = window.scrollY + window.innerHeight;
-            var aboutCol = document.querySelector('#skills .about-me-col');
+            var aboutCol = document.querySelector('#about .about-me-col');
             var aboutPosition = aboutCol.offsetTop;
-            var technologyCol = document.querySelector('#skills .technology-col');
+            var technologyCol = document.querySelector('#about .technology-col');
             var technologyPosition = technologyCol.offsetTop ;
             if (scrollPosition > aboutPosition) {
                 aboutCol.style.visibility = 'visible';
@@ -104,14 +104,9 @@ export default {
 
 <style scoped>
 
-  #skills {
-    /* background-color: #333333; */
-    width: 100%;
-    /*height: 50em;*/
-    /* margin: 0; */
-    text-align: center;
-      padding-bottom: 40px;
-      /*background-color: #555555;*/
+  #about {
+      width: 100%;
+      text-align: center;
       padding: 100px 0;
   }
 
@@ -134,8 +129,7 @@ export default {
       flex: 48%;
       padding: 0 1% 1% 1%;
       margin: 1%;
-      /*visibility: hidden;*/
-      transition: 350ms ease;
+      transition: 450ms ease;
       transform: translateX(-100px);
       opacity: 0;
   }
@@ -146,7 +140,6 @@ export default {
   }
 
   .name {
-      /*font-weight: bold;*/
       font-style: italic;
   }
 
@@ -164,19 +157,13 @@ export default {
       margin: 1%;
       font-weight: bold;
       border: 2px solid #ff0000;
-      /*visibility: hidden;*/
-      transition: 350ms ease;
+      transition: 450ms ease;
       transform: translateX(100px);
       opacity: 0;
   }
 
   .technology-grid {
       flex: 48%;
-      /*padding: 1% 0;*/
-      /*margin: 1%;*/
-      /*background-color: #fff;*/
-      /*border-radius: 5px;*/
-      /*color: #333333;*/
       max-width: 500px;
       display: flex;
       justify-content: flex-start;
@@ -190,18 +177,8 @@ export default {
   }
 
   .technology {
-      /*display: flex;*/
-      /*flex-direction: column;*/
-      /*width: min-content;*/
-      /*display: block;*/
-      /*flex: 50%;*/
       margin: 2% 0;
       width: 33.33%;
-  }
-
-  .technology-icon {
-      /*display: block;*/
-      /*display: inline-block;*/
   }
 
   .webpack-icon {
@@ -209,10 +186,6 @@ export default {
   }
 
   .technology-name {
-      /*display: flex;*/
-      /*align-items: center;*/
-      /*margin-left: 15px;*/
-      /*display: inline-block;*/
       font-weight: bold;
       text-align: center;
       display: block;
@@ -243,7 +216,7 @@ export default {
     }
 
   @media (max-width: 550px) {
-      #skills {
+      #about {
           padding: 70px 0;
       }
 

@@ -35,12 +35,10 @@ export default {
   #footer-row {
     background-color: #333333;
     width: 100%;
-    /* margin: 0; */
     height: 90px;
     position: relative;
     bottom: 0;
     border-top: 2px solid #ff0000;
-    /*padding: 30px 0;*/
   }
 
   .scroll-up {
@@ -85,9 +83,7 @@ export default {
   .copy-right {
     font-family: sans-serif;
     font-size: 13px;
-    /*text-transform: uppercase;*/
     margin: 38px 35px;
-    /*margin-left: 35px;*/
     width: fit-content;
     display: inline-block;
   }

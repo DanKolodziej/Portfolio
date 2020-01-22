@@ -2,7 +2,7 @@
   <div id="navbar">
       <ul class="nav-list">
           <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#header-row')" :class="{active: isHomeActive}">home</a></li>
-          <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#skills-section')" :class="{active: isAboutActive}">about</a></li>
+          <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#about-section')" :class="{active: isAboutActive}">about</a></li>
           <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#projects-section')" :class="{active: isExperienceActive}">experience</a></li>
           <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#contact-section')" :class="{active: isContactActive}">contact</a></li>
           <div class="hamburger-icon" @click="hamburgerMenu" :class="{change: isHamburgerMenuActive}">
@@ -13,7 +13,7 @@
       </ul>
       <ul class="nav-list-mobile" :class="{active: isHamburgerMenuActive}">
           <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#header-row')" :class="{active: isHomeActive}">home</a></li>
-          <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#skills-section')" :class="{active: isAboutActive}">about</a></li>
+          <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#about-section')" :class="{active: isAboutActive}">about</a></li>
           <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#projects-section')" :class="{active: isExperienceActive}">experience</a></li>
           <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#contact-section')" :class="{active: isContactActive}">contact</a></li>
       </ul>
@@ -21,13 +21,9 @@
 </template>
 
 <script>
-// import NavbarItem from './NavbarItem.vue';
 
 export default {
     name: 'navbar',
-    components: {
-      // NavbarItem
-    },
     data() {
         return {
             isHomeActive: false,

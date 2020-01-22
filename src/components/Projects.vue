@@ -86,13 +86,9 @@ export default {
 <style scoped>
 
   #projects {
-    /*background-color: #656565;*/
     background-color: #222222;
     width: 100%;
-    /*height: 50em;*/
-    /* margin: 0; */
     text-align: center;
-    padding-bottom: 40px;
     padding: 100px 0;
   }
 
@@ -116,17 +112,16 @@ export default {
 
   .projects-grid {
     width: 80%;
-    /*max-width: 768px;*/
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    transition: 350ms ease;
+    transition: 450ms ease;
     transform: scale(0.5);
     opacity: 0;
   }
 
   .projects-grid p {
-    transition: 350ms ease;
+    transition: 450ms ease;
     transform: scale(0.5);
     opacity: 0;
   }

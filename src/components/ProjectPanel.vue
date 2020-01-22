@@ -77,21 +77,17 @@
 
     .project-panel {
         width: 33%;
-        /*max-width: 236px;*/
         background-color: #fff;
         color: #333333;
         border-radius: 5px;
         box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
         margin: 10px 5px 0 5px;
         border: 2px solid #ff0000;
-        /*display: flex;*/
-        /*flex-direction: column;*/
         position: relative;
     }
 
     .project-text, .project-modal-text {
         padding: 2%;
-        /*border-top: 2px solid #ff0000;*/
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -122,7 +118,6 @@
     }
 
     .project-link:hover, .project-modal-link:hover {
-        /*text-decoration: underline;*/
         border-bottom: 1px solid #0086da;
     }
 
@@ -134,7 +129,6 @@
 
     .project-thumbnail {
         width: 100%;
-        /*height: 156px;*/
         border-bottom: 2px solid #ff0000;
         object-fit: cover;
         transition: 0.45s ease;
@@ -157,11 +151,6 @@
         color: #fff;
         cursor: pointer;
         position: absolute;
-        /*top: 20%;*/
-        /*left: 0;*/
-        /*right: 0;*/
-        /*margin-left: auto;*/
-        /*margin-right: auto;*/
         top: -130px;
         left: 0;
         bottom: 0;
@@ -194,12 +183,7 @@
         transform: scale(0.8);
     }
 
-    /*.modal-pop-up-enter-to, .modal-pop-up-leave {*/
-    /*    transform: scale(1);*/
-    /*}*/
-
     .project-modal {
-        /*display: none;*/
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -213,13 +197,8 @@
         overflow: auto;
         background-color: rgb(0,0,0);
         background-color: rgba(0,0,0,0.4);
-        /*opacity: 0;*/
-        /*transition: 0.45s ease;*/
     }
 
-    /*.project-modal.visible {*/
-    /*    opacity: 1;*/
-    /*}*/
 
     .project-modal-content {
         background-color: #fff;
@@ -228,13 +207,7 @@
         width: 85%;
         max-width: 768px;
         margin: 0 auto;
-        /*transition: 250ms ease;*/
-        /*transform: scale(0.8);*/
     }
-
-    /*.project-modal-content.visible {*/
-    /*    transform: scale(1);*/
-    /*}*/
 
     .project-modal-text h3, .project-modal-text p {
         margin: 0 0 1em;
@@ -242,7 +215,6 @@
 
     .project-modal-thumbnail {
         width: 100%;
-        /*height: 256px;*/
         border-bottom: 2px solid #ff0000;
         object-fit: cover;
     }

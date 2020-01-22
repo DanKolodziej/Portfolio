@@ -69,13 +69,8 @@ export default {
 <style scoped>
 
   #contact {
-    /* background-color: #333333; */
-    /*background-color: #757575;*/
     width: 100%;
-    /*height: 50em;*/
-    /* margin: 0; */
     text-align: center;
-    padding-bottom: 40px;
     padding: 100px 0;
   }
 
@@ -100,13 +95,13 @@ export default {
   }
 
   #contact p {
-    transition: 350ms ease;
+    transition: 450ms ease;
     transform: translateY(-50px);
     opacity: 0;
   }
 
   #contact .contact-options p {
-    transition: 350ms ease;
+    transition: 450ms ease;
     transform: translateY(-50px);
     opacity: 0;
   }
@@ -135,7 +130,7 @@ export default {
   }
 
   #contact .resume-paragraph {
-    transition: 350ms ease;
+    transition: 450ms ease;
     transform: translateY(50px);
     opacity: 0;
     width: 256px;

@@ -8,11 +8,6 @@ import { faJs, faVuejs, faPhp, faSymfony, faHtml5, faCss3Alt, faWordpress,
   faLinkedinIn, faGithub, faLinkedin, faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-// import HeaderRow from "./components/HeaderRow";
-// import Skills from "./components/Skills";
-// import Projects from "./components/Projects";
-// import Contact from "./components/Contact";
-
 library.add(faJs, faVuejs, faPhp, faSymfony, faHtml5, faCss3Alt, faWordpress,
     faLinkedinIn, faArrowRight, faGithub, faLinkedin, faGithubSquare, faEnvelopeSquare, faAngleDoubleUp, faFilePdf);
 Vue.component('font-awesome-icon', FontAwesomeIcon);

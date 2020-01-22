@@ -1,19 +1,13 @@
 <template>
   <div id="app">
     <header-row></header-row>
-<!--    <router-view></router-view>-->
     <navbar></navbar>
-<!--    <router-view name="about"></router-view>-->
-<!--    <router-view name="experience"></router-view>-->
-<!--    <router-view name="contact"></router-view>-->
-    <span id="skills-section" class="section-anchor"></span>
-    <skills></skills>
+    <span id="about-section" class="section-anchor"></span>
+    <about></about>
     <span id="projects-section" class="section-anchor"></span>
     <projects></projects>
     <span id="contact-section" class="section-anchor"></span>
     <contact></contact>
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <footer-row></footer-row>
   </div>
 </template>
@@ -21,11 +15,10 @@
 <script>
 import HeaderRow from './components/HeaderRow.vue';
 import Navbar from './components/Navbar.vue';
-import Skills from './components/Skills.vue';
+import About from './components/About.vue';
 import Projects from './components/Projects.vue';
 import Contact from './components/Contact.vue';
 import FooterRow from './components/FooterRow.vue';
-// import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
@@ -33,7 +26,7 @@ export default {
     HeaderRow,
     Navbar,
     FooterRow,
-    Skills,
+    About,
     Projects,
     Contact
   }
@@ -50,13 +43,11 @@ export default {
     background-color: #444;
     margin: 0;
     color: #fff;
-    /* font-family: Roboto, Arial, serif; */
     font-family: 'Raleway', sans-serif;
   }
 
   #app {
     width: 100%;
-    /* margin: 0; */
   }
 
   .section-anchor {
@@ -66,12 +57,4 @@ export default {
     visibility: hidden;
   }
 
-/* #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} */
 </style>
