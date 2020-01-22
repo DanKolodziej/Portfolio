@@ -1,7 +1,7 @@
 <template>
   <div id="header-row">
     <h1 class="header-main-text">
-        Hi, I'm <span class="full-name">Daniel Kołodziej</span>. 
+        Hi, I'm <span class="full-name">Daniel Kołodziej</span>.
         <br>
        I'm a junior full-stack web developer.
     </h1>
@@ -11,7 +11,23 @@
             <font-awesome-icon class="arrow-icon" icon="arrow-right" />
         </button>
     </a>
-    <!-- <h1>Web Developer</h1> -->
+      <vue-particles
+              color="#ff0000"
+              :particleOpacity="0.7"
+              :particlesNumber="40"
+              shapeType="circle"
+              :particleSize="4"
+              linesColor="#dedede"
+              :linesWidth="1"
+              :lineLinked="true"
+              :lineOpacity="0.4"
+              :linesDistance="150"
+              :moveSpeed="3"
+              :hoverEffect="true"
+              hoverMode="grab"
+              :clickEffect="false"
+      >
+      </vue-particles>
   </div>
 </template>
 
@@ -42,6 +58,14 @@ export default {
     /* font-family: Roboto, Arial, serif; */
     flex-direction: column;
     flex-wrap: wrap;
+      overflow: hidden;
+  }
+
+  #particles-js {
+      height: 100vh;
+      width: 100%;
+      position: absolute;
+      overflow: hidden;
   }
 
   .header-main-text {
@@ -53,6 +77,8 @@ export default {
       /* width: 30%; */
       text-align: center;
       order: 1;
+      position: relative;
+      z-index: 999;
   }
 
   .full-name {
@@ -63,12 +89,15 @@ export default {
     align-self: center;
     order: 2;
       margin-top: 20px;
+      position: relative;
+      z-index: 999;
   }
   
   .view-portfolio-btn {
     border: 2px solid #ff0000;
     /*background-color: #444;*/
-      background-color: #222222;
+    /*  background-color: #222222;*/
+      background-color: transparent;
     padding: 14px 28px;
     font-size: 20px;
     cursor: pointer;
