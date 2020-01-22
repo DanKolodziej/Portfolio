@@ -170,12 +170,6 @@ export default {
       flex-wrap: wrap;
   }
 
-  .technology-row {
-      display: flex;
-      justify-content: space-evenly;
-      margin: 0 0 5%;
-  }
-
   .technology {
       margin: 2% 0;
       width: 33.33%;
