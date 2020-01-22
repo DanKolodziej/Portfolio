@@ -1,5 +1,5 @@
 <template>
-  <div id="contact">
+  <div id="contact" class="section">
     <h1 class="section-title">CONTACT</h1>
     <p>
       If you have any questions feel free to contact me.
@@ -35,10 +35,10 @@ export default {
   name: 'contact',
   methods: {
     scrollHandle: function () {
-      var scrollPosition = window.scrollY;
+      var scrollPosition = window.scrollY + window.innerHeight;
       var paragraphs = document.querySelectorAll('#contact p');
-      var paragraphsPosition = paragraphs[0].offsetTop;
-      if (true) {
+      var paragraphsPosition = paragraphs[4].offsetTop + paragraphs[4].clientHeight;
+      if (scrollPosition > paragraphsPosition) {
         paragraphs[0].style.visibility = 'visible';
         paragraphs[0].style.opacity = '1';
         paragraphs[0].style.transform = 'translateY(0)';
@@ -76,18 +76,20 @@ export default {
     /* margin: 0; */
     text-align: center;
     padding-bottom: 40px;
+    padding: 100px 0;
   }
 
   .section-title {
       display: inline-block;
       width: auto;
-      margin: 1em auto;
+      margin: 0 auto 1em;
       text-align: center;
       border-bottom: 2px solid #ff0000;
   }
 
   .section-title+p {
-    margin-top: 0;
+    width: 80%;
+    margin: 0 auto 1em;
   }
 
   .contact-options {
@@ -136,6 +138,8 @@ export default {
     transition: 350ms ease;
     transform: translateY(50px);
     opacity: 0;
+    width: 256px;
+    margin: 1em auto;
   }
 
   .pdf-icon {
@@ -144,6 +148,12 @@ export default {
 
   .pdf-icon:hover {
     color: #ff0000;
+  }
+
+  @media (max-width: 550px) {
+    #contact {
+      padding: 70px 0;
+    }
   }
 
 </style>

@@ -77,7 +77,7 @@
 
     .project-panel {
         width: 33%;
-        max-width: 236px;
+        /*max-width: 236px;*/
         background-color: #fff;
         color: #333333;
         border-radius: 5px;
@@ -134,7 +134,7 @@
 
     .project-thumbnail {
         width: 100%;
-        height: 156px;
+        /*height: 156px;*/
         border-bottom: 2px solid #ff0000;
         object-fit: cover;
         transition: 0.45s ease;
@@ -157,11 +157,17 @@
         color: #fff;
         cursor: pointer;
         position: absolute;
-        top: 20%;
+        /*top: 20%;*/
+        /*left: 0;*/
+        /*right: 0;*/
+        /*margin-left: auto;*/
+        /*margin-right: auto;*/
+        top: -130px;
         left: 0;
+        bottom: 0;
         right: 0;
-        margin-left: auto;
-        margin-right: auto;
+        margin: auto;
+        height: 41.33px;
         z-index: 99;
         font-family: 'Raleway', sans-serif;
         transition: 0.45s;

@@ -1,10 +1,10 @@
 <template>
-  <div id="skills">
+  <div id="skills" class="section">
       <h1 class="section-title">ABOUT</h1>
       <div class="skills-row">
           <div class="about-me-col">
               <img class="portrait" src="@/assets/images/SAVE_20191126_201321.jpg"/>
-              <p>
+              <p class="about-paragraph">
                   I'm a aspiring junior full-stack web developer from Wroclaw, Poland.
                   As a web developer I am driven by desire to create new things,
                   passion and desire to improve.
@@ -76,17 +76,17 @@ export default {
   name: 'skills',
     methods: {
         scrollHandle: function () {
-            var scrollPosition = window.scrollY;
+            var scrollPosition = window.scrollY + window.innerHeight;
             var aboutCol = document.querySelector('#skills .about-me-col');
             var aboutPosition = aboutCol.offsetTop;
             var technologyCol = document.querySelector('#skills .technology-col');
-            var technologyPosition = technologyCol.offsetTop;
-            if (true) {
+            var technologyPosition = technologyCol.offsetTop ;
+            if (scrollPosition > aboutPosition) {
                 aboutCol.style.visibility = 'visible';
                 aboutCol.style.opacity = '1';
                 aboutCol.style.transform = 'translateX(0)';
             }
-            if (true) {
+            if (scrollPosition > technologyPosition) {
                 technologyCol.style.visibility = 'visible';
                 technologyCol.style.opacity = '1';
                 technologyCol.style.transform = 'translateX(0)';
@@ -112,19 +112,20 @@ export default {
     text-align: center;
       padding-bottom: 40px;
       /*background-color: #555555;*/
+      padding: 100px 0;
   }
 
   .section-title {
       display: inline-block;
       width: auto;
-      margin: 1em auto;
+      margin: 0 auto 1em;
       text-align: center;
       border-bottom: 2px solid #ff0000;
   }
 
   .skills-row {
       display: flex;
-      max-width: 768px;
+      max-width: 1024px;
       margin: 0 auto;
       overflow: hidden;
   }
@@ -137,6 +138,11 @@ export default {
       transition: 350ms ease;
       transform: translateX(-100px);
       opacity: 0;
+  }
+
+  .about-paragraph {
+      width: 90%;
+      margin: 1em auto;
   }
 
   .name {
@@ -171,7 +177,7 @@ export default {
       /*background-color: #fff;*/
       /*border-radius: 5px;*/
       /*color: #333333;*/
-      max-width: 320px;
+      max-width: 500px;
       display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;
@@ -212,21 +218,35 @@ export default {
       display: block;
   }
 
-    @media (max-width: 768px) {
-        .skills-row {
-            flex-direction: column;
-        }
+  @media (max-width: 1024px) {
+      .skills-row {
+          max-width: 768px;
+      }
 
-        .technology-grid {
-            max-width: none;
-        }
+      .technology-grid {
+          max-width: 320px;
+      }
+  }
 
-        .technology {
-            width: 16%;
-        }
+  @media (max-width: 768px) {
+      .skills-row {
+          flex-direction: column;
+      }
+
+      .technology-grid {
+          max-width: none;
+      }
+
+      .technology {
+          width: 16%;
+      }
     }
 
   @media (max-width: 550px) {
+      #skills {
+          padding: 70px 0;
+      }
+
       .technology {
           width: 25%;
       }

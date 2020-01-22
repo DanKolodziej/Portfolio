@@ -48,7 +48,8 @@ export default {
       scrollHandle: function () {
           var scrollPosition = window.scrollY;
           var sections = document.querySelectorAll('.section-anchor');
-          if (scrollPosition >= sections[2].offsetTop-267) {
+          if (scrollPosition >= sections[2].offsetTop-60
+              || (window.innerHeight + Math.ceil(window.pageYOffset)) >= document.body.offsetHeight) {
               this.isHomeActive = false;
               this.isAboutActive = false;
               this.isExperienceActive = false;

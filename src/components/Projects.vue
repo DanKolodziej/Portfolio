@@ -1,5 +1,5 @@
 <template>
-  <div id="projects">
+  <div id="projects" class="section">
     <h1 class="section-title">EXPERIENCE</h1>
     <p class="experience-paragraph">My experience involves 7 months of work + my BSc Thesis project</p>
     <p class="experience-paragraph">Recently finished project: this portfolio :)</p>
@@ -51,12 +51,12 @@ export default {
   },
   methods: {
     scrollHandle: function () {
-      var scrollPosition = window.scrollY;
+      var scrollPosition = window.scrollY + window.innerHeight;
       var paragraphs = document.querySelectorAll('#projects p');
-      var paragraphsPosition = paragraphs[0].offsetTop;
+      var paragraphsPosition = paragraphs[2].offsetTop  + paragraphs[2].clientHeight;
       var projectsGrid = document.querySelector('#projects .projects-grid');
       var projectsGridPosition = projectsGrid.offsetTop;
-      if (true) {
+      if (scrollPosition > paragraphsPosition) {
         paragraphs[0].style.visibility = 'visible';
         paragraphs[0].style.opacity = '1';
         paragraphs[0].style.transform = 'scale(1)';
@@ -64,7 +64,7 @@ export default {
         paragraphs[1].style.opacity = '1';
         paragraphs[1].style.transform = 'scale(1)';
       }
-      if (true) {
+      if (scrollPosition > projectsGridPosition) {
         projectsGrid.style.visibility = 'visible';
         projectsGrid.style.opacity = '1';
         projectsGrid.style.transform = 'none';
@@ -93,23 +93,30 @@ export default {
     /* margin: 0; */
     text-align: center;
     padding-bottom: 40px;
+    padding: 100px 0;
   }
 
   .section-title {
       display: inline-block;
       width: auto;
-      margin: 1em auto;
+      margin: 0 auto 1em;
       text-align: center;
       border-bottom: 2px solid #ff0000;
   }
 
   .section-title+p {
-    margin-top: 0;
+    width: 80%;
+    margin: 0 auto 1em;
+  }
+
+  .experience-paragraph {
+    width: 80%;
+    margin: 1em auto;
   }
 
   .projects-grid {
-    width: 100%;
-    max-width: 768px;
+    width: 80%;
+    /*max-width: 768px;*/
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -142,8 +149,19 @@ export default {
     border-bottom: 1px solid;
   }
 
-  @media (max-width: 550px) {
+  @media (max-width: 1024px) {
     .projects-grid {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 550px) {
+    #projects {
+      padding: 70px 0;
+    }
+
+    .projects-grid {
+      width: 80%;
       flex-direction: column;
     }
   }
