@@ -5,7 +5,7 @@
           <div class="about-me-col">
               <img class="portrait" src="@/assets/images/SAVE_20191126_201321.jpg"/>
               <p class="about-paragraph">
-                  I'm a aspiring junior full-stack web developer from Wroclaw, Poland.
+                  I'm an aspiring junior full-stack web developer from Wroclaw, Poland.
                   As a web developer I am driven by desire to create new things,
                   passion and desire to improve.
                   While working on a new project I give 100% of myself by paying attention to details.
@@ -17,19 +17,19 @@
           Main technologies I've worked with:
               <div class="technology-grid">
                   <span class="technology">
-                      <font-awesome-icon class="technology-icon" style="color: #E44D26" :icon="[ 'fab', 'html5' ]" size="4x" />
+                     <img class="technology-icon webpack-icon" src="@/assets/images/html5.png" />
                       <span class="technology-name">HTML</span>
                   </span>
                   <span class="technology">
-                      <font-awesome-icon class="technology-icon" style="color: #264de4" :icon="[ 'fab', 'css3-alt' ]" size="4x" />
+                      <img class="technology-icon webpack-icon" src="@/assets/images/css3.png" />
                       <span class="technology-name">CSS</span>
                   </span>
                   <span class="technology">
-                      <font-awesome-icon class="technology-icon" style="color: #F0DB4F" :icon="[ 'fab', 'js' ]" size="4x" />
+                      <img class="technology-icon webpack-icon" src="@/assets/images/javascript.png" />
                       <span class="technology-name">Javascript</span>
                   </span>
                   <span class="technology">
-                      <font-awesome-icon class="technology-icon" style="color: #4fc08d;" :icon="[ 'fab', 'vuejs' ]" size="4x" />
+                      <img class="technology-icon webpack-icon" src="@/assets/images/vuejs.png" />
                       <span class="technology-name">Vue.js</span>
                   </span>
                   <span class="technology">
@@ -59,6 +59,18 @@
                   <span class="technology">
                       <img class="technology-icon webpack-icon" src="@/assets/images/mysql.png" />
                       <span class="technology-name">MySQL</span>
+                  </span>
+                  <span class="technology">
+                      <font-awesome-icon class="technology-icon" style="color: #F1502F" :icon="[ 'fab', 'git-alt' ]" size="4x" />
+                      <span class="technology-name">Git</span>
+                  </span>
+                  <span class="technology">
+                      <img class="technology-icon webpack-icon" src="@/assets/images/linux.png" />
+                      <span class="technology-name">Linux</span>
+                  </span>
+                  <span class="technology">
+                      <font-awesome-icon class="technology-icon" style="color: #CC3534" :icon="[ 'fab', 'npm' ]" size="4x" />
+                      <span class="technology-name">NPM</span>
                   </span>
                   <span class="technology">
                       <img class="technology-icon webpack-icon" src="@/assets/images/webpack.png" />
@@ -141,6 +153,7 @@ export default {
 
   .name {
       font-style: italic;
+      font-weight: bold;
   }
 
   .portrait {
@@ -172,7 +185,7 @@ export default {
 
   .technology {
       margin: 2% 0;
-      width: 33.33%;
+      width: 20%;
   }
 
   .webpack-icon {
@@ -191,7 +204,11 @@ export default {
       }
 
       .technology-grid {
-          max-width: 320px;
+          max-width: 350px;
+      }
+
+      .technology {
+          width: 25%;
       }
   }
 
@@ -205,7 +222,7 @@ export default {
       }
 
       .technology {
-          width: 16%;
+          width: 20%;
       }
     }
 

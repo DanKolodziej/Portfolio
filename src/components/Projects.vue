@@ -8,6 +8,7 @@
                      :image-src="project.imageName"
                      :title="project.title"
                      :description="project.description"
+                     :description-two="project.descriptionTwo"
                      :technologies="project.technologies"
                      :link="project.link">
       </project-panel>
@@ -33,18 +34,24 @@ export default {
     return {
       projects: [
         { imageName: 'swm_screen.png', title: 'SWM',
-          description: 'Development of a website made on wordpress,' +
-                  ' adding new interface modules for the page builder Elementor',
+          description: 'Duties: development of a website made on Wordpress,' +
+                  ' adding new interface modules for page builder Elementor,' +
+                  'various ui design changes,' +
+                  'backend functionality for example login system for 2 different user roles',
+          descriptionTwo: '',
           technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'SASS', 'PHP', 'Wordpress', 'MySQL', 'Webpack'],
           link: '' },
         { imageName: 'calculator.png', title: 'Sound Property Cash Flow Calculator',
-          description: 'Calculator that calculates cash flows for real estate investors.',
+          description: 'Duty: development of a calculator that calculates cash flows for real estate investors.',
+          descriptionTwo: 'Calculator was made in Vue.js and added to an existing website as a wordpress plugin.',
           technologies: ['HTML', 'CSS', 'JavaScript', 'Vue.js', 'Bootstrap', 'PHP', 'Wordpress', 'MySQL', 'Webpack'],
           link: 'https://soundproperty.com.au/calculator/' },
         { imageName: 'erasmus.png', title: 'Erasmus Enrollment Web App for Foreign Students',
-          description: 'A web application supporting enrollment for courses' +
-                  ' for foreign students as part of the Erasmus+ exchange',
-          technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap', 'PHP', 'Symfony', 'MySQL'],
+          description: 'BSc Thesis project: A web application supporting enrollment for courses' +
+                  ' for foreign students as part of the Erasmus+ exchange.',
+          descriptionTwo: 'Mainly database operations like for example adding/editing/deleting a user/course, ' +
+                  'displaying appropriate data etc.',
+          technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap', 'PHP', 'Symfony Framework', 'MySQL'],
           link: '' },
       ]
     }

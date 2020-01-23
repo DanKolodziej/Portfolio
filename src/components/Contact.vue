@@ -22,7 +22,7 @@
       You can also checkout my resume.
     </p>
     <p class="resume-paragraph">
-      <a class="resume-link" href="http://danielkolodziej.com/Daniel_Kołodziej_CV.pdf" target="_blank">
+      <a class="resume-link" href="http://danielkolodziej.com/Daniel_Kołodziej_CV_ENG.pdf" target="_blank">
         <font-awesome-icon class="pdf-icon" icon="file-pdf" size="3x" />
       </a>
     </p>

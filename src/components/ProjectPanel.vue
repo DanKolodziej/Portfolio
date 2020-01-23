@@ -24,12 +24,18 @@
                             <p>
                                 {{ description }}
                             </p>
+                            <p v-if="descriptionTwo != ''">
+                                {{ descriptionTwo }}
+                            </p>
                             <p>
-                                Technologies:<span v-for="(technology, index) in technologies"> {{ technology }}
+                                Main Technologies: <span v-for="(technology, index) in technologies"> {{ technology }}
                                 <span v-if="index != technologies.length - 1"> | </span></span>
                             </p>
-                            <a v-if="link != ''" class="project-modal-link" :href="link" target="_blank">Link</a>
-                            <span v-else class="project-modal-no-link">No link available</span>
+                            <div class="project-modal-bottom-row">
+                                <a v-if="link != ''" class="project-modal-link" :href="link" target="_blank">Link</a>
+                                <span v-else class="project-modal-no-link">No link available</span>
+                                <button class="modal-close-button" @click="isActiveModal = false">Close</button>
+                            </div>
                         </div>
                     </div>
                 </transition>
@@ -60,6 +66,10 @@
             description: {
                 type: String,
                 required: true
+            },
+            descriptionTwo: {
+                type: String,
+                required: false
             },
             technologies: {
                 type: Array,
@@ -159,7 +169,7 @@
         height: 41.33px;
         z-index: 99;
         font-family: 'Raleway', sans-serif;
-        transition: 0.45s;
+        transition: 0.35s;
     }
 
     .modal-button:hover {
@@ -205,18 +215,53 @@
         border: 2px solid #ff0000;
         border-radius: 5px;
         width: 85%;
-        max-width: 768px;
+        max-width: 700px;
         margin: 0 auto;
     }
 
     .project-modal-text h3, .project-modal-text p {
-        margin: 0 0 1em;
+        margin: 0 0 0.5em;
     }
 
     .project-modal-thumbnail {
         width: 100%;
         border-bottom: 2px solid #ff0000;
         object-fit: cover;
+    }
+
+    .project-modal-bottom-row {
+        display: flex;
+        align-items: center;
+    }
+
+    .project-modal-link, .project-modal-no-link {
+        margin: 0 0 0 4%;
+
+    }
+
+    .modal-close-button {
+        background-color: transparent;
+        border: 2px solid #ff0000;
+        padding: 7px 14px;
+        color: #ff0000;
+        font-weight: bold;
+        cursor: pointer;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: 4%;
+        font-family: 'Raleway', sans-serif;
+        transition: 0.35s;
+    }
+
+    .modal-close-button:hover {
+        background-color: #ff0000;
+        color: #fff;
+    }
+
+    @media (max-width: 1280px) {
+        .project-modal-content {
+            max-width: 600px;
+        }
     }
 
     @media (max-width: 550px) {
