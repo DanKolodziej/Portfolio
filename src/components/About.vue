@@ -17,31 +17,31 @@
           Main technologies I've worked with:
               <div class="technology-grid">
                   <span class="technology">
-                     <img class="technology-icon webpack-icon" src="@/assets/images/html5.png" />
+                     <img class="technology-icon image-icon" src="@/assets/images/html5.png" />
                       <span class="technology-name">HTML</span>
                   </span>
                   <span class="technology">
-                      <img class="technology-icon webpack-icon" src="@/assets/images/css3.png" />
+                      <img class="technology-icon image-icon" src="@/assets/images/css3.png" />
                       <span class="technology-name">CSS</span>
                   </span>
                   <span class="technology">
-                      <img class="technology-icon webpack-icon" src="@/assets/images/javascript.png" />
+                      <img class="technology-icon image-icon" src="@/assets/images/javascript.png" />
                       <span class="technology-name">Javascript</span>
                   </span>
                   <span class="technology">
-                      <img class="technology-icon webpack-icon" src="@/assets/images/vuejs.png" />
+                      <img class="technology-icon image-icon" src="@/assets/images/vuejs.png" />
                       <span class="technology-name">Vue.js</span>
                   </span>
                   <span class="technology">
-                      <img class="technology-icon webpack-icon" src="@/assets/images/jquery.png" />
+                      <img class="technology-icon image-icon" src="@/assets/images/jquery.png" />
                       <span class="technology-name">jQuery</span>
                   </span>
                   <span class="technology">
-                      <img class="technology-icon webpack-icon" src="@/assets/images/bootstrap.png" />
+                      <img class="technology-icon image-icon" src="@/assets/images/bootstrap.png" />
                       <span class="technology-name">Bootstrap</span>
                   </span>
                   <span class="technology">
-                      <img class="technology-icon webpack-icon" src="@/assets/images/sass.png" />
+                      <img class="technology-icon image-icon" src="@/assets/images/sass.png" />
                       <span class="technology-name">Sass</span>
                   </span>
                   <span class="technology">
@@ -57,7 +57,7 @@
                       <span class="technology-name">Wordpress</span>
                   </span>
                   <span class="technology">
-                      <img class="technology-icon webpack-icon" src="@/assets/images/mysql.png" />
+                      <img class="technology-icon image-icon" src="@/assets/images/mysql.png" />
                       <span class="technology-name">MySQL</span>
                   </span>
                   <span class="technology">
@@ -65,7 +65,7 @@
                       <span class="technology-name">Git</span>
                   </span>
                   <span class="technology">
-                      <img class="technology-icon webpack-icon" src="@/assets/images/linux.png" />
+                      <img class="technology-icon image-icon" src="@/assets/images/linux.png" />
                       <span class="technology-name">Linux</span>
                   </span>
                   <span class="technology">
@@ -73,7 +73,7 @@
                       <span class="technology-name">NPM</span>
                   </span>
                   <span class="technology">
-                      <img class="technology-icon webpack-icon" src="@/assets/images/webpack.png" />
+                      <img class="technology-icon image-icon" src="@/assets/images/webpack.png" />
                       <span class="technology-name">Webpack</span>
                   </span>
               </div>
@@ -188,7 +188,7 @@ export default {
       width: 20%;
   }
 
-  .webpack-icon {
+  .image-icon {
       height: 60px;
   }
 
