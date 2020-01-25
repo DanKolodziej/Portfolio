@@ -1,8 +1,6 @@
 <template>
   <div id="projects" class="section">
     <h1 class="section-title">EXPERIENCE</h1>
-    <p class="experience-paragraph">My experience involves 7 months of work + my BSc Thesis project</p>
-    <p class="experience-paragraph">Recently finished project: this portfolio :)</p>
     <div class="projects-grid">
       <project-panel v-for="project in projects"
                      :image-src="project.imageName"
@@ -13,6 +11,8 @@
                      :link="project.link">
       </project-panel>
     </div>
+    <p class="experience-paragraph">My experience involves 7 months of work + my BSc Thesis Project</p>
+    <p class="experience-paragraph">Recently finished project: this portfolio :)</p>
     <p>
       <a class="projects-icon-link" href="https://github.com/DanKolodziej" target="_blank">
         <font-awesome-icon :icon="[ 'fab', 'github-square' ]" /></a>
@@ -34,22 +34,22 @@ export default {
     return {
       projects: [
         { imageName: 'swm_screen.png', title: 'SWM',
-          description: 'Duties: development of a website made on Wordpress,' +
-                  ' adding new interface modules for page builder Elementor,' +
-                  'various ui design changes,' +
-                  'backend functionality for example login system for 2 different user roles',
+          description: 'Duties: development of a website made with Wordpress, ' +
+                  ' adding new interface modules for page builder Elementor, ' +
+                  'various ui design changes, ' +
+                  'backend functionality, for example login system for 2 different user roles',
           descriptionTwo: '',
           technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'SASS', 'PHP', 'Wordpress', 'MySQL', 'Webpack'],
           link: '' },
-        { imageName: 'calculator.png', title: 'Sound Property Cash Flow Calculator',
+        { imageName: 'calculator.png', title: 'Cash Flow Calculator',
           description: 'Duty: development of a calculator that calculates cash flows for real estate investors.',
-          descriptionTwo: 'Calculator was made in Vue.js and added to an existing website as a wordpress plugin.',
+          descriptionTwo: 'The calculator was made in Vue.js and added to an existing website as a wordpress plugin.',
           technologies: ['HTML', 'CSS', 'JavaScript', 'Vue.js', 'Bootstrap', 'PHP', 'Wordpress', 'MySQL', 'Webpack'],
           link: 'https://soundproperty.com.au/calculator/' },
         { imageName: 'erasmus.png', title: 'Erasmus Enrollment Web App for Foreign Students',
-          description: 'BSc Thesis project: A web application supporting enrollment for courses' +
+          description: 'BSc Thesis Project: A web application supporting enrollment for courses' +
                   ' for foreign students as part of the Erasmus+ exchange.',
-          descriptionTwo: 'Mainly database operations like for example adding/editing/deleting a user/course, ' +
+          descriptionTwo: 'Mainly database operations, for example adding/editing/deleting a user/course, ' +
                   'displaying appropriate data etc.',
           technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap', 'PHP', 'Symfony Framework', 'MySQL'],
           link: '' },
@@ -63,6 +63,11 @@ export default {
       var paragraphsPosition = paragraphs[2].offsetTop  + paragraphs[2].clientHeight;
       var projectsGrid = document.querySelector('#projects .projects-grid');
       var projectsGridPosition = projectsGrid.offsetTop;
+      if (scrollPosition > projectsGridPosition) {
+        projectsGrid.style.visibility = 'visible';
+        projectsGrid.style.opacity = '1';
+        projectsGrid.style.transform = 'none';
+      }
       if (scrollPosition > paragraphsPosition) {
         paragraphs[0].style.visibility = 'visible';
         paragraphs[0].style.opacity = '1';
@@ -70,11 +75,6 @@ export default {
         paragraphs[1].style.visibility = 'visible';
         paragraphs[1].style.opacity = '1';
         paragraphs[1].style.transform = 'scale(1)';
-      }
-      if (scrollPosition > projectsGridPosition) {
-        projectsGrid.style.visibility = 'visible';
-        projectsGrid.style.opacity = '1';
-        projectsGrid.style.transform = 'none';
         paragraphs[2].style.visibility = 'visible';
         paragraphs[2].style.opacity = '1';
         paragraphs[2].style.transform = 'scale(1)';

@@ -5,12 +5,14 @@
           <div class="about-me-col">
               <img class="portrait" src="@/assets/images/SAVE_20191126_201321.jpg"/>
               <p class="about-paragraph">
-                  I'm an aspiring junior full-stack web developer from Wroclaw, Poland.
+                  I'm an aspiring junior full-stack web developer from Wrocław, Poland.
                   As a web developer I am driven by desire to create new things,
-                  passion and desire to improve.
-                  While working on a new project I give 100% of myself by paying attention to details.
-                  I have gained some experience working for <span class="name">DKSoft</span>.
-                  I also have a bachelor of science degree in computer science.
+                  passion and determination to improve my skills.
+                  While working on a project I give 100% of myself by
+                  analitical thinking and paying attention to details.
+                  I have gained some experience working for <span class="name">DKSoft</span> in Wrocław.
+                  I also have a bachelor of science degree in computer science
+                  from Wrocław University of Science and Technology.
               </p>
           </div>
           <div class="technology-col">
@@ -132,7 +134,7 @@ export default {
 
   .skills-row {
       display: flex;
-      max-width: 1024px;
+      max-width: 1280px;
       margin: 0 auto;
       overflow: hidden;
   }
@@ -147,7 +149,7 @@ export default {
   }
 
   .about-paragraph {
-      width: 90%;
+      width: 100%;
       margin: 1em auto;
   }
 
@@ -199,10 +201,6 @@ export default {
   }
 
   @media (max-width: 1024px) {
-      .skills-row {
-          max-width: 768px;
-      }
-
       .technology-grid {
           max-width: 350px;
       }
