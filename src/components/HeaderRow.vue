@@ -3,7 +3,7 @@
     <h1 class="header-main-text">
         Hi, I'm <span class="full-name">Daniel Kołodziej</span>.
         <br>
-       I'm a junior full-stack web developer.
+       I'm a full-stack web developer.
     </h1>
     <a class="view-portfolio-link" @click.prevent="scroll('#about-section')">
         <button class="view-portfolio-btn">

@@ -5,6 +5,7 @@
           <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#about-section')" :class="{active: isAboutActive}">about</a></li>
           <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#projects-section')" :class="{active: isExperienceActive}">experience</a></li>
           <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#contact-section')" :class="{active: isContactActive}">contact</a></li>
+          <li class="nav-item"><a class="resume-link" href="http://danielkolodziej.com/Daniel_Kołodziej_CV_ENG.pdf" target="_blank">resume</a></li>
           <div class="hamburger-icon" @click="hamburgerMenu" :class="{change: isHamburgerMenuActive}">
               <div class="bar-one"></div>
               <div class="bar-two"></div>
@@ -16,6 +17,7 @@
           <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#about-section')" :class="{active: isAboutActive}">about</a></li>
           <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#projects-section')" :class="{active: isExperienceActive}">experience</a></li>
           <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#contact-section')" :class="{active: isContactActive}">contact</a></li>
+          <li class="nav-item"><a class="resume-link" href="http://danielkolodziej.com/Daniel_Kołodziej_CV_ENG.pdf" target="_blank">resume</a></li>
       </ul>
   </div>
 </template>
@@ -133,8 +135,8 @@ export default {
       margin-top: 15px;
   }
 
-  .nav-list-mobile .nav-item:last-child {
-      margin-bottom: 15px;
+  .nav-list-mobile .nav-item:nth-last-child(2) {
+      margin-bottom: 20px;
   }
 
   .nav-item {
@@ -155,6 +157,20 @@ export default {
   .nav-link:hover, .nav-link.active {
     color: #ff0000;
     border-bottom: 2px solid #ff0000;
+  }
+
+  .resume-link {
+      color: #fff;
+      padding: 7px 14px;
+      text-decoration: none;
+      text-transform: uppercase;
+      border: 2px solid #ff0000;
+      transition: 350ms ease;
+      cursor: pointer;
+  }
+
+  .resume-link:hover {
+      background: #ff0000;
   }
 
   .hamburger-icon {
@@ -201,7 +217,8 @@ export default {
 
         .nav-list-mobile.active {
             /*display: flex;*/
-            height: 137.33px;
+            /*height: 137.33px;*/
+            height: 189.66px;
         }
     }
 

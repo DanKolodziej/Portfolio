@@ -5,12 +5,12 @@
           <div class="about-me-col">
               <img class="portrait" src="@/assets/images/SAVE_20191126_201321.jpg"/>
               <p class="about-paragraph">
-                  I'm an aspiring junior full-stack web developer from Wrocław, Poland.
+                  I'm an aspiring full-stack web developer from Wrocław, Poland.
                   As a web developer I am driven by desire to create new things,
                   passion and determination to improve my skills.
                   While working on a project I give 100% of myself by
-                  analitical thinking and paying attention to details.
-                  I have gained some experience working for <span class="name">DKSoft</span> in Wrocław.
+                  analytical thinking and paying attention to details.
+                  I have gained some experience working as a freelancer.
                   I also have a bachelor of science degree in computer science
                   from Wrocław University of Science and Technology.
               </p>

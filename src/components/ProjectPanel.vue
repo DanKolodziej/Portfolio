@@ -9,8 +9,7 @@
             <p>
                 {{ description }}
             </p>
-            <a v-if="link != ''" class="project-link" :href="link" target="_blank">Link</a>
-            <span v-else class="project-no-link">No link available</span>
+            <a class="project-link" :class="{'no-link': hasNoLink}" :href="link" target="_blank">Link</a>
         </div>
         <transition name="modal-appear">
             <div class="project-modal" v-show="isActiveModal" @click="isActiveModal = false">
@@ -33,7 +32,6 @@
                             </p>
                             <div class="project-modal-bottom-row">
                                 <a v-if="link != ''" class="project-modal-link" :href="link" target="_blank">Link</a>
-                                <span v-else class="project-modal-no-link">No link available</span>
                                 <button class="modal-close-button" @click="isActiveModal = false">Close</button>
                             </div>
                         </div>
@@ -52,6 +50,11 @@
                 isHovered: false,
                 isButtonHovered: false,
                 isActiveModal: false
+            }
+        },
+        computed: {
+            hasNoLink: function () {
+                return this.link == '';
             }
         },
         props: {
@@ -129,6 +132,10 @@
 
     .project-link:hover, .project-modal-link:hover {
         border-bottom: 1px solid #0086da;
+    }
+
+    .no-link {
+        visibility: hidden;
     }
 
     .project-no-link, .project-modal-no-link {
