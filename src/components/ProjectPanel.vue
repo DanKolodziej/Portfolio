@@ -174,6 +174,7 @@
         right: 0;
         margin: auto;
         height: 41.33px;
+        width: 90.708px;
         z-index: 99;
         font-family: 'Raleway', sans-serif;
         transition: 0.35s;

@@ -133,7 +133,7 @@ export default {
     transition: 450ms ease;
     transform: translateY(50px);
     opacity: 0;
-    width: 256px;
+    width: 260px;
     margin: 1em auto;
   }
 
