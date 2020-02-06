@@ -1,6 +1,6 @@
 <template>
     <div class="project-panel" @mouseleave="isHovered = false">
-        <button class="modal-button" v-show="isHovered" @mouseenter="isButtonHovered = true" @mouseleave="isButtonHovered = false" @click="isActiveModal = true">Check</button>
+        <button class="modal-button" v-show="isHovered" @mouseenter="isButtonHovered = true" @mouseleave="isButtonHovered = false" @click="openModal">Check</button>
         <img class="project-thumbnail" @mouseenter="isHovered = true" :src="require('@/assets/images/' + imageSrc)" :class="{hover: isButtonHovered}"/>
         <div class="project-text" @mouseenter="isHovered = false">
             <h3>
@@ -81,6 +81,12 @@
             link: {
                 type: String,
                 required: false
+            }
+        },
+        methods: {
+            openModal: function () {
+                this.isActiveModal = true;
+                this.isHovered = false;
             }
         }
     }

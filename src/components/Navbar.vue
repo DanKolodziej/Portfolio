@@ -17,7 +17,7 @@
           <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#about-section')" :class="{active: isAboutActive}">about</a></li>
           <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#projects-section')" :class="{active: isExperienceActive}">experience</a></li>
           <li class="nav-item"><a class="nav-link" @click.prevent="scroll('#contact-section')" :class="{active: isContactActive}">contact</a></li>
-          <li class="nav-item"><a class="resume-link" href="http://danielkolodziej.com/Daniel_Kołodziej_CV_ENG.pdf" target="_blank">resume</a></li>
+          <li class="nav-item"><a class="resume-link" href="http://danielkolodziej.com/Daniel_Kołodziej_CV-ENG.pdf" target="_blank">resume</a></li>
       </ul>
   </div>
 </template>
