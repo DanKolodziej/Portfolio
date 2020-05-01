@@ -29,13 +29,6 @@ export default {
     About,
     Projects,
     Contact
-  },
-  mounted() {
-    this.$ga.page({
-      page: '/',
-      title: 'Home page',
-      location: window.location.href
-    })
   }
 }
 </script>

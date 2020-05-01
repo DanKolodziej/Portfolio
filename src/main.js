@@ -7,7 +7,6 @@ import { faArrowRight, faEnvelopeSquare, faAngleDoubleUp, faFilePdf } from '@for
 import { faPhp, faSymfony, faWordpress,
   faLinkedinIn, faGithub, faLinkedin, faGithubSquare, faGitAlt, faNpm } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import VueAnalytics from 'vue-analytics'
 
 library.add(faPhp, faSymfony, faWordpress,
     faLinkedinIn, faArrowRight, faNpm, faGithub, faLinkedin, faGithubSquare, faGitAlt, faEnvelopeSquare, faAngleDoubleUp, faFilePdf);
@@ -15,10 +14,6 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 
 Vue.use(VueParticles);
 
-Vue.use(VueAnalytics, {
-  id: 'UA-135550441-1',
-  checkDuplicatedScript: true
-})
 
 Vue.config.productionTip = false;
 
