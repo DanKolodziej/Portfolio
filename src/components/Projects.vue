@@ -33,6 +33,13 @@ export default {
   data(){
     return {
       projects: [
+        { imageName: 'save_animals.png', title: 'Save Animals',
+          description: 'A web application which allows helps users find animals for adoption or lost.' +
+                  ' Also contains a subpage with scraped data from wikipedia of endangered animal ' +
+                  ' species from Poland. Only available language is polish',
+          descriptionTwo: '',
+          technologies: ['HTML', 'CSS', 'JavaScript', 'Vue.js', 'SASS', 'PHP', 'Symfony Framework', 'MySQL', 'Webpack'],
+          link: 'http://vps-2b04629e.vps.ovh.net/' },
         { imageName: 'swm_screen.png', title: 'SWM',
           description: 'Duties: development of a website made with Wordpress, ' +
                   ' adding new interface modules for page builder Elementor, ' +
@@ -121,7 +128,8 @@ export default {
     width: 80%;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     transition: 450ms ease;
     transform: scale(0.5);
     opacity: 0;

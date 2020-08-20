@@ -95,7 +95,7 @@
 <style scoped>
 
     .project-panel {
-        width: 33%;
+        width: calc(33% - 14px);
         background-color: #fff;
         color: #333333;
         border-radius: 5px;
