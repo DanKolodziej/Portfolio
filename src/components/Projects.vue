@@ -11,8 +11,8 @@
                      :link="project.link">
       </project-panel>
     </div>
-    <p class="experience-paragraph">My experience involves 7 months of work + my BSc Thesis Project</p>
-    <p class="experience-paragraph">Recently finished project: this portfolio :)</p>
+    <p class="experience-paragraph">My experience involves 7 months of work + my personal projects</p>
+    <p class="experience-paragraph">Project I am currently working on: Save Animals</p>
     <p>
       <a class="projects-icon-link" href="https://github.com/DanKolodziej" target="_blank">
         <font-awesome-icon :icon="[ 'fab', 'github-square' ]" /></a>
